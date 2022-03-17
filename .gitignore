@@ -1,0 +1,10 @@
+*~
+
+.mypy_cache/
+
+.python-version
+
+src/.cache*
+src/__pycache__/
+src/cridentials/*
+src/*.txt
