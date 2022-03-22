@@ -8,3 +8,6 @@ src/.cache*
 src/__pycache__/
 src/cridentials/*
 src/*.txt
+/geckodriver.log
+/src/geckodriver.log
+src/creds.json

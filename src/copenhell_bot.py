@@ -1,25 +1,28 @@
 import argparse
+import os
 
 from rich import print
 
 import html_utils
-
-from html_utils import (
-    get_artist_urls,
-    get_uris_from_urls,
-)
-
+from html_utils import get_artist_names
 from spotify_utils import (
     artists_top_tracks,
     load_credentials,
     populate_playlist,
     setup_spotify_client,
-    load_credentials,
+    get_uris_from_names,
 )
-import os
 
 
 def fill_env_creds(args):
+    """Fills the input args with credentials if not set through the cli. First it checks
+    environmental variables and then the creds.json, where environmental takes precedence
+    over creds.json
+
+    :param args: argparse.Namespace
+    :returns: argparse.Namespace
+
+    """
     valid_tokens = ["CLIENT_ID", "CLIENT_SECRET", "REDIRECT_URI", "PLAYLIST_URI"]
     creds = load_credentials()
 
@@ -102,16 +105,21 @@ def setup_args():
 def main():
     args = setup_args()
 
-    # Roskilde content section
+    # roskilde content section
     if not args.quiet:
-        print(f"[bold cyan]Fetching artist uris from {html_utils.BASE_URL}[/bold cyan]")
-    artist_urls = get_artist_urls()
-    artist_uris = get_uris_from_urls(artist_urls, verbose=(not args.quiet))
+        print("[bold cyan]Fetching artist uris from {html_utils.BASE_URL}[/bold cyan]")
+    artist_names = get_artist_names()
 
-    # Spotify section
+    # # Spotify section
+    if not args.quiet:
+        print("[bold cyan]Fetching artist uris from names through Spotify")
+    spotify_client = setup_spotify_client(args)
+    artist_uris = get_uris_from_names(
+        artist_names, spotify_client, verbose=(not args.quiet)
+    )
+
     if not args.quiet:
         print("[bold cyan]Fetching artist top tracks[/bold cyan]")
-    spotify_client = setup_spotify_client(args)
     top_tracks = artists_top_tracks(
         artist_uris,
         spotify_client,
@@ -125,6 +133,8 @@ def main():
     populate_playlist(
         top_tracks, args.playlist_uri, spotify_client, verbose=(not args.quiet)
     )
+
+    print("[bold green]Done![/bold green]")
 
 
 if __name__ == "__main__":
