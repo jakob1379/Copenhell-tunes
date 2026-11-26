@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d">
+<title id="t">Copenhell tunes: from festival line-up to Spotify playlist</title>
+<desc id="d">One band is picked from the copenhell.dk line-up, found on Spotify, its five most popular tracks are taken and added to the playlist.</desc>
+<style>
+:root{--bg:#e3dfd8;--ink:#241c1b;--muted:#7b716b;--line:#b9b1a9;--strip:#8f857e;--accent:#a8231a;--brass:#9a6f12}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1716;--ink:#ede5dc;--muted:#a39890;--line:#4a3f3c;--strip:#776c66;--accent:#e0503c;--brass:#d6a443}}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:var(--ink)}
+.title{font-family:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed","DejaVu Sans Condensed",system-ui,sans-serif;font-stretch:condensed;font-weight:800;font-size:38px;letter-spacing:-.5px}
+.sub{font-size:15px;fill:var(--muted)}
+.step{font-size:14px;font-weight:700}
+.note{font-size:12px;fill:var(--muted)}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;fill:var(--muted)}
+.frame{fill:none;stroke:var(--ink);stroke-width:2}
+.wire{stroke:var(--line);stroke-width:2;fill:none}
+.head{fill:var(--line)}
+.strip{fill:var(--strip)}
+.pick{fill:var(--accent)}
+.groove{fill:none;stroke:var(--line);stroke-width:1.5}
+.label{fill:var(--accent)}
+.bar{fill:var(--brass)}
+.done{fill:var(--muted)}
+.row{fill:var(--ink)}
+.dot{fill:var(--accent)}
+.token,.label,.bar,.row.new{transform-box:fill-box}
+.pick{animation:pick 10s ease-in-out infinite both}
+.token{transform-origin:center;opacity:0;animation:token 10s cubic-bezier(.6,0,.3,1) infinite both}
+.spin{transform-origin:370px 210px;animation:spin 10s cubic-bezier(.5,0,.2,1) infinite both}
+.label{transform-origin:center;animation:found 10s ease-out infinite both}
+.uri{animation:uri 10s ease-out infinite both}
+.bar{transform-origin:bottom;animation:grow 10s cubic-bezier(.2,.8,.2,1) infinite both}
+.bar:nth-of-type(2){animation-delay:.08s}.bar:nth-of-type(3){animation-delay:.16s}.bar:nth-of-type(4){animation-delay:.24s}.bar:nth-of-type(5){animation-delay:.32s}
+.p2{opacity:0;animation:p2 10s ease-in-out infinite both}
+.p3{opacity:0;animation:p3 10s ease-in-out infinite both}
+.row.new{transform-origin:left;animation:add 10s cubic-bezier(.2,.8,.2,1) infinite both}
+.new.r2{animation-delay:.1s}.new.r3{animation-delay:.2s}.new.r4{animation-delay:.3s}.new.r5{animation-delay:.4s}
+@keyframes pick{0%,2%{fill:var(--strip)}6%,94%{fill:var(--accent)}100%{fill:var(--strip)}}
+@keyframes token{0%,7%{opacity:0;transform:none}9%{opacity:1;transform:none}27%{opacity:1;transform:translate(266px,-10px) scale(.25)}31%,100%{opacity:0;transform:translate(266px,-10px) scale(.1)}}
+@keyframes spin{0%,27%{transform:rotate(0)}40%,100%{transform:rotate(360deg)}}
+@keyframes found{0%,30%{opacity:0;transform:scale(.2)}35%{opacity:1;transform:scale(1.35)}39%,94%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes uri{0%,34%{opacity:0}40%,94%{opacity:1}100%{opacity:0}}
+@keyframes p2{0%,40%{opacity:0;transform:none}42%{opacity:1;transform:none}50%{opacity:1;transform:translateX(66px)}52%,100%{opacity:0;transform:translateX(66px)}}
+@keyframes grow{0%,50%{transform:scaleY(0)}60%,94%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+@keyframes p3{0%,63%{opacity:0;transform:none}65%{opacity:1;transform:none}73%{opacity:1;transform:translateX(66px)}75%,100%{opacity:0;transform:translateX(66px)}}
+@keyframes add{0%,74%{transform:scaleX(0)}80%,94%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="960" height="400" fill="var(--bg)"/>
+
+<text class="title" x="50" y="62">Copenhell tunes</text>
+<text class="sub" x="50" y="88">The festival line-up in, one Spotify playlist of the bands' top tracks out.</text>
+
+<g>
+<rect class="frame" x="50" y="112" width="140" height="204" rx="3"/>
+<text class="code" x="62" y="134" style="font-size:10px">copenhell.dk/program</text>
+<rect class="strip" x="62" y="150" width="96" height="9" rx="1"/>
+<rect class="strip" x="62" y="172" width="70" height="9" rx="1"/>
+<rect class="strip" x="62" y="194" width="110" height="9" rx="1"/>
+<rect class="pick" x="62" y="216" width="84" height="9" rx="1"/>
+<rect class="strip" x="62" y="238" width="62" height="9" rx="1"/>
+<rect class="strip" x="62" y="260" width="100" height="9" rx="1"/>
+<rect class="strip" x="62" y="282" width="76" height="9" rx="1"/>
+</g>
+
+<path class="wire" d="M205 210H284"/><path class="head" d="M292 210l-9-5v10z"/>
+<path class="wire" d="M447 210H516"/><path class="head" d="M524 210l-9-5v10z"/>
+<path class="wire" d="M682 210H756"/><path class="head" d="M764 210l-9-5v10z"/>
+
+<g>
+<circle class="frame" cx="370" cy="210" r="58"/>
+<circle class="groove" cx="370" cy="210" r="46"/>
+<circle class="groove" cx="370" cy="210" r="33"/>
+<g class="spin"><path class="frame" d="M370 160a50 50 0 0 1 43 25" stroke-linecap="round"/></g>
+<circle class="label" cx="370" cy="210" r="16"/>
+<circle cx="370" cy="210" r="3" fill="var(--bg)"/>
+<text class="code uri" x="370" y="292" text-anchor="middle">spotify:artist:…</text>
+</g>
+
+<g>
+<path class="wire" d="M528 290H672" stroke="var(--ink)"/>
+<rect class="bar" x="535" y="140" width="18" height="150"/>
+<rect class="bar" x="563" y="166" width="18" height="124"/>
+<rect class="bar" x="591" y="186" width="18" height="104"/>
+<rect class="bar" x="619" y="204" width="18" height="86"/>
+<rect class="bar" x="647" y="220" width="18" height="70"/>
+<text class="code" x="600" y="308" text-anchor="middle">sorted by popularity</text>
+</g>
+
+<g>
+<rect class="frame" x="780" y="112" width="140" height="204" rx="3"/>
+<text class="step" x="792" y="136">Playlist</text>
+<g class="done">
+<rect x="792" y="152" width="10" height="10"/><rect x="810" y="154" width="86" height="6"/>
+<rect x="792" y="168" width="10" height="10"/><rect x="810" y="170" width="64" height="6"/>
+<rect x="792" y="184" width="10" height="10"/><rect x="810" y="186" width="94" height="6"/>
+<rect x="792" y="200" width="10" height="10"/><rect x="810" y="202" width="72" height="6"/>
+<rect x="792" y="216" width="10" height="10"/><rect x="810" y="218" width="80" height="6"/>
+</g>
+<g>
+<g class="row new r1"><rect x="792" y="232" width="10" height="10"/><rect x="810" y="234" width="86" height="6"/></g>
+<g class="row new r2"><rect x="792" y="248" width="10" height="10"/><rect x="810" y="250" width="64" height="6"/></g>
+<g class="row new r3"><rect x="792" y="264" width="10" height="10"/><rect x="810" y="266" width="80" height="6"/></g>
+<g class="row new r4"><rect x="792" y="280" width="10" height="10"/><rect x="810" y="282" width="52" height="6"/></g>
+<g class="row new r5"><rect x="792" y="296" width="10" height="10"/><rect x="810" y="298" width="70" height="6"/></g>
+</g>
+</g>
+
+<rect class="token" x="62" y="216" width="84" height="9" rx="1" fill="var(--accent)"/>
+<circle class="dot p2" cx="452" cy="210" r="5"/>
+<circle class="dot p3" cx="688" cy="210" r="5"/>
+
+<text class="step" x="120" y="348" text-anchor="middle">1 Read the line-up</text>
+<text class="note" x="120" y="368" text-anchor="middle">headless Firefox scrape</text>
+<text class="step" x="370" y="348" text-anchor="middle">2 Find each band</text>
+<text class="note" x="370" y="368" text-anchor="middle">Spotify artist search</text>
+<text class="step" x="600" y="348" text-anchor="middle">3 Take top tracks</text>
+<text class="note" x="600" y="368" text-anchor="middle">up to 5 per band, market DK</text>
+<text class="step" x="850" y="348" text-anchor="middle">4 Fill the playlist</text>
+<text class="note" x="850" y="368" text-anchor="middle">cleared, then refilled</text>
+</svg>
